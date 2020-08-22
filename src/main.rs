@@ -8,20 +8,16 @@ fn main() {
     println!("{}", result);
 }
 
-fn  binary_search(arr: [i32; 7], find: i32) -> u32 {
+fn binary_search(arr: [i32; 7], find: i32) -> i32 {
     let mut min: u32 = 0;
     let mut max: u32 = (arr.len() - 1) as u32;
 
-    // println!("{}", min);
-    // println!("{}", max);
-
-
     while min <= max {
         let mid: u32 = (min + max) / 2;
-        let guess = arr[mid as usize];
+        let guess: i32 = arr[mid as usize];
 
         if guess == find {
-            return mid;
+            return mid as i32;
         } else if guess < find {
             min = mid + 1;
         } else {
@@ -29,6 +25,6 @@ fn  binary_search(arr: [i32; 7], find: i32) -> u32 {
         }
     }
 
-    return 0;
+    return -1;
 
 }
