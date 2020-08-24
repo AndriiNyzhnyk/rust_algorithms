@@ -3,40 +3,41 @@ fn main() {
 
     run_binary_search_arr();
     run_binary_search_vec();
+    run_selection_sort();
 }
 
 fn run_binary_search_arr() {
 
     let arr:[i32; 7] = [1, 15, 22, 43, 168, 500, 502];
 
-    let result_1 = binary_search_arr(arr, 1);
+    let result_1 = binary_search_arr(&arr, 1);
     assert_eq!(result_1, 0);
 
-    let result_2 = binary_search_arr(arr, 15);
+    let result_2 = binary_search_arr(&arr, 15);
     assert_eq!(result_2, 1);
 
-    let result_3 = binary_search_arr(arr, 22);
+    let result_3 = binary_search_arr(&arr, 22);
     assert_eq!(result_3, 2);
 
-    let result_4 = binary_search_arr(arr, 43);
+    let result_4 = binary_search_arr(&arr, 43);
     assert_eq!(result_4, 3);
 
-    let result_5 = binary_search_arr(arr, 168);
+    let result_5 = binary_search_arr(&arr, 168);
     assert_eq!(result_5, 4);
 
-    let result_6 = binary_search_arr(arr, 500);
+    let result_6 = binary_search_arr(&arr, 500);
     assert_eq!(result_6, 5);
 
-    let result_7 = binary_search_arr(arr, 502);
+    let result_7 = binary_search_arr(&arr, 502);
     assert_eq!(result_7, 6);
 
-    let result_8 = binary_search_arr(arr, 888);
+    let result_8 = binary_search_arr(&arr, 888);
     assert_eq!(result_8, -1);
 }
 
 
 
-fn binary_search_arr(arr: [i32; 7], find: i32) -> i32 {
+fn binary_search_arr(arr: &[i32; 7], find: i32) -> i32 {
     let mut min: u32 = 0;
     let mut max: u32 = (arr.len() - 1) as u32;
 
@@ -103,4 +104,40 @@ fn binary_search_vec(v: &Vec<i32>, find: i32) -> i32 {
 
     return -1;
 }
+
+fn run_selection_sort() {
+    let v: Vec<i32> = vec![0, -10, 10, -4, -5];
+    let sorted_vector: Vec<i32> = selection_sort(&v);
+    println!("{:#?}:", sorted_vector);
+}
+
+
+fn selection_sort(v: &Vec<i32>) -> Vec<i32>{
+    let mut input_vector = v.clone();
+    let mut sorted_vector: Vec<i32> = Vec::new();
+
+    for _ in v.iter() {
+        let smallest = find_smallest(&input_vector);
+        println!("Input vector: {:#?}:", input_vector);
+        sorted_vector.push(input_vector[smallest]);
+        input_vector.swap_remove(smallest);
+    }
+
+    return sorted_vector;
+}
+
+fn find_smallest(v: &Vec<i32>) -> usize {
+    let mut smallest: &i32 = &v[0];
+    let mut smallest_index: usize = 0;
+
+    for (pos, elem) in v.iter().enumerate() {
+        if elem < smallest {
+            smallest = elem;
+            smallest_index = pos;
+        }
+    }
+
+    return smallest_index;
+}
+
 
