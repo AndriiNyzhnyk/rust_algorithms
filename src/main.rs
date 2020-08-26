@@ -6,6 +6,9 @@ fn main() {
 
     run_selection_sort_vec();
     run_selection_sort_arr();
+
+    let factorial_recursive: u128 = factorial_recursive(32);
+    println!("{}", factorial_recursive);
 }
 
 fn run_binary_search_arr() {
@@ -178,3 +181,12 @@ fn find_smallest_element_into_arr(arr:&[i32; 5]) -> usize {
 
     return smallest_element_with_index;
 }
+
+fn factorial_recursive(n: u128) -> u128 {
+    if n == 1 {
+        return n;
+    }
+
+    return n * factorial_recursive(n - 1);
+}
+
