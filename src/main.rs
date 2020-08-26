@@ -9,6 +9,10 @@ fn main() {
 
     let factorial_recursive: u128 = factorial_recursive(32);
     println!("{}", factorial_recursive);
+
+
+    let factorial_loop: u128 = factorial_loop(32);
+    println!("{}", factorial_loop);
 }
 
 fn run_binary_search_arr() {
@@ -190,3 +194,14 @@ fn factorial_recursive(n: u128) -> u128 {
     return n * factorial_recursive(n - 1);
 }
 
+fn factorial_loop(n: u128) -> u128 {
+    let mut counter: u128 = n;
+    let mut result: u128 = 1;
+
+    while counter > 1 {
+        result *= counter;
+        counter -= 1;
+    }
+
+    return result;
+}
