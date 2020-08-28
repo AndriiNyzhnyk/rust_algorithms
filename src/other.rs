@@ -28,7 +28,7 @@ pub mod algorithms {
         assert_eq!(result_8, -1);
     }
 
-    fn binary_search_arr(arr: &[i32; 7], find: i32) -> i32 {
+    fn binary_search_arr(arr: &[i32], find: i32) -> i32 {
         let mut min: u32 = 0;
         let mut max: u32 = (arr.len() - 1) as u32;
 
@@ -124,11 +124,11 @@ pub mod algorithms {
     pub fn run_sum_arr_loop() {
         let arr: [i32; 4] = [1, 2, 3, 4];
 
-        let result = sum_arr_loop(arr);
+        let result = sum_arr_loop(&arr);
         assert_eq!(result, 10);
     }
 
-    fn sum_arr_loop(arr: [i32; 4]) -> i32 {
+    fn sum_arr_loop(arr: &[i32]) -> i32 {
         let mut sum: i32 = 0;
 
         for element in arr.iter() {
