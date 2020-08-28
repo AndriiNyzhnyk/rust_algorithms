@@ -120,4 +120,21 @@ pub mod algorithms {
 
         return result;
     }
+
+    pub fn run_sum_arr_loop() {
+        let arr: [i32; 4] = [1, 2, 3, 4];
+
+        let result = sum_arr_loop(arr);
+        assert_eq!(result, 10);
+    }
+
+    fn sum_arr_loop(arr: [i32; 4]) -> i32 {
+        let mut sum: i32 = 0;
+
+        for element in arr.iter() {
+            sum += element;
+        }
+
+        return sum;
+    }
 }

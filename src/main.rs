@@ -11,6 +11,8 @@ fn main() {
     algorithms::run_binary_search_arr();
     algorithms::run_binary_search_vec();
 
+    algorithms::run_sum_arr_loop();
+
     sort::run_selection_sort_vec();
     sort::run_selection_sort_arr();
 
