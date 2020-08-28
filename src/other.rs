@@ -153,4 +153,19 @@ pub mod algorithms {
 
         return arr[0] + sum_arr_recursive(&arr[1..]);
     }
+
+    pub fn run_figure_out_arr_len() {
+        let arr: [i32; 4] = [1, 2, 3, 4];
+
+        let result = figure_out_arr_len(&arr);
+        assert_eq!(result, arr.len());
+    }
+
+    fn figure_out_arr_len(arr: &[i32]) -> usize {
+        if arr == [] {
+            return 0;
+        }
+
+        return 1 + figure_out_arr_len(&arr[1..]);
+    }
 }
