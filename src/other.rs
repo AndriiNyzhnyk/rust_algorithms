@@ -100,7 +100,6 @@ pub mod algorithms {
 
 
 
-
     pub fn factorial_recursive(n: u128) -> u128 {
         if n == 1 {
             return n;
@@ -121,6 +120,8 @@ pub mod algorithms {
         return result;
     }
 
+
+
     pub fn run_sum_arr_loop() {
         let arr: [i32; 4] = [1, 2, 3, 4];
 
@@ -136,5 +137,20 @@ pub mod algorithms {
         }
 
         return sum;
+    }
+
+    pub fn run_sum_arr_recursive() {
+        let arr: [i32; 4] = [1, 2, 3, 4];
+
+        let result = sum_arr_recursive(&arr);
+        assert_eq!(result, 10);
+    }
+
+    fn sum_arr_recursive(arr: &[i32]) -> i32 {
+        if arr.len() == 1 {
+            return arr[0];
+        }
+
+        return arr[0] + sum_arr_recursive(&arr[1..]);
     }
 }
