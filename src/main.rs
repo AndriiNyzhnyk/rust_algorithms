@@ -14,7 +14,7 @@ fn main() {
     algorithms::run_sum_arr_loop();
     algorithms::run_sum_arr_recursive();
 
-    algorithms::run_figure_out_arr_len();
+    algorithms::run_figure_out_arr_len_recursive();
 
     sort::run_selection_sort_vec();
     sort::run_selection_sort_arr();
