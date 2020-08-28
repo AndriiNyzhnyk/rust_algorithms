@@ -159,7 +159,7 @@ pub mod algorithms {
     pub fn run_figure_out_arr_len_recursive() {
         let arr: [i32; 4] = [1, 2, 3, 4];
 
-        let result = figure_out_arr_len(&arr);
+        let result = figure_out_arr_len_recursive(&arr);
         assert_eq!(result, arr.len());
     }
 
@@ -168,6 +168,6 @@ pub mod algorithms {
             return 0;
         }
 
-        return 1 + figure_out_arr_len(&arr[1..]);
+        return 1 + figure_out_arr_len_recursive(&arr[1..]);
     }
 }
