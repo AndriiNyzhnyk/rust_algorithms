@@ -170,4 +170,27 @@ pub mod algorithms {
 
         return 1 + figure_out_arr_len_recursive(&arr[1..]);
     }
+
+
+    pub fn run_find_max_item_recursive() {
+        let arr: [i32; 4] = [1, 2, 3, 4];
+
+        let result = find_max_item_recursive(&arr);
+        assert_eq!(result, 4);
+    }
+
+    fn find_max_item_recursive(arr: &[i32]) -> i32 {
+        if arr.len() == 1 {
+            return arr[0];
+        }
+
+        let max = find_max_item_recursive(&arr[1..]);
+
+        if arr[0] > max {
+            return arr[0];
+        }
+
+        return max;
+    }
+
 }
