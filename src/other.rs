@@ -98,9 +98,15 @@ pub mod algorithms {
         return -1;
     }
 
+    pub fn run_factorial() {
+        let factorial_recursive: u128 = factorial_recursive(32);
+        let factorial_loop: u128 = factorial_loop(32);
+
+        assert_eq!(factorial_recursive, factorial_loop);
+    }
 
 
-    pub fn factorial_recursive(n: u128) -> u128 {
+    fn factorial_recursive(n: u128) -> u128 {
         if n == 1 {
             return n;
         }
@@ -108,7 +114,7 @@ pub mod algorithms {
         return n * factorial_recursive(n - 1);
     }
 
-    pub fn factorial_loop(n: u128) -> u128 {
+    fn factorial_loop(n: u128) -> u128 {
         let mut counter: u128 = n;
         let mut result: u128 = 1;
 

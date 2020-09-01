@@ -21,11 +21,6 @@ fn main() {
     sort::run_selection_sort_vec();
     sort::run_selection_sort_arr();
 
-    let factorial_recursive: u128 = algorithms::factorial_recursive(32);
-    println!("{}", factorial_recursive);
-
-
-    let factorial_loop: u128 = algorithms::factorial_loop(32);
-    println!("{}", factorial_loop);
+    algorithms::run_factorial();
 }
 
