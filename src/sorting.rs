@@ -69,4 +69,37 @@ pub mod sort {
 
         return smallest_element_with_index;
     }
+
+
+    // pub fn run_quick_sort_vec() {
+    //     let vec: Vec<i32> = vec![0, -10, 10, -4, -5];
+    //     quick_sort_vec(&vec);
+    // }
+    //
+    // fn quick_sort_vec(vec: &Vec<i32>) -> &Vec<i32> {
+    //     if vec.len() < 2 {
+    //         return vec;
+    //     }
+    //
+    //     let pivot = vec[vec.len() / 2];
+    //
+    //     let less: Vec<i32> = vec
+    //         .iter()
+    //         .filter(|&item| item < &pivot)
+    //         .cloned()
+    //         .collect();
+    //
+    //     println!("{:?}", less);
+    //
+    //     let bigger: Vec<i32> = vec
+    //         .iter()
+    //         .filter(|&item| item >= &pivot)
+    //         .cloned()
+    //         .collect();
+    //
+    //     println!("{:?}", bigger);
+    //
+    //     return [quick_sort_vec(&less), &vec![pivot], quick_sort_vec(&bigger)].concat();
+    //     // return vec;
+    // }
 }

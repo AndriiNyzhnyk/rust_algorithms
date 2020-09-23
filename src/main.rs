@@ -21,6 +21,8 @@ fn main() {
     sort::run_selection_sort_vec();
     sort::run_selection_sort_arr();
 
+    // sort::run_quick_sort_vec();
+
     algorithms::run_factorial();
 }
 
