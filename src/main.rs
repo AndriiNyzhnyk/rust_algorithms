@@ -12,6 +12,8 @@ fn main() {
     algorithms::run_binary_search_vec();
     algorithms::run_recursive_binary_search_arr();
 
+    algorithms::run_countdown();
+
     algorithms::run_sum_arr_loop();
     algorithms::run_sum_arr_recursive();
 
