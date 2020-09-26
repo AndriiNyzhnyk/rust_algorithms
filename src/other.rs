@@ -98,6 +98,59 @@ pub mod algorithms {
         return -1;
     }
 
+    pub fn run_recursive_binary_search_arr() {
+
+        let arr:[i32; 7] = [1, 15, 22, 43, 168, 500, 502];
+
+        let result_1 = recursive_binary_search_arr(&arr, 1);
+        assert_eq!(result_1, 0);
+
+        let result_2 = recursive_binary_search_arr(&arr, 15);
+        assert_eq!(result_2, 1);
+
+        // let result_3 = recursive_binary_search_arr(&arr, 22);
+        // assert_eq!(result_3, 2);
+        //
+        // let result_4 = recursive_binary_search_arr(&arr, 43);
+        // assert_eq!(result_4, 3);
+        //
+        // let result_5 = recursive_binary_search_arr(&arr, 168);
+        // assert_eq!(result_5, 4);
+        //
+        // let result_6 = recursive_binary_search_arr(&arr, 500);
+        // assert_eq!(result_6, 5);
+
+        // let result_7 = recursive_binary_search_arr(&arr, 502);
+        // assert_eq!(result_7, 6);
+
+        // let result_8 = recursive_binary_search_arr(&arr, 888);
+        // assert_eq!(result_8, -1);
+
+    }
+
+    // TODO implement later
+    fn recursive_binary_search_arr(arr: &[i32], find: i32) -> i32 {
+        let min: u32 = 0;
+        let max: u32 = (arr.len() - 1) as u32;
+
+        if min <= max {
+            let mid: u32 = (min + max) / 2;
+            let guess: i32 = arr[mid as usize];
+
+            if guess == find {
+                return mid as i32;
+            } else if guess < find {
+                // min = mid + 1;
+                return recursive_binary_search_arr(&arr[((mid + 1) as usize)..((max + 1) as usize)], find);
+            } else {
+                // max = mid - 1;
+                return recursive_binary_search_arr(&arr[min as usize..(mid - 1 + 1) as usize], find);
+            }
+        }
+
+        -1
+    }
+
     pub fn run_factorial() {
         let factorial_recursive: u128 = factorial_recursive(32);
         let factorial_loop: u128 = factorial_loop(32);
